@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:p="http://www.springframework.org/schema/p"
+  xmlns:util="http://www.springframework.org/schema/util"
+  xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
+                      http://www.springframework.org/schema/util http://www.springframework.org/schema/util/spring-util-3.0.xsd
+                      https://www.springframework.org/schema/beans/context https://www.springframework.org/schema/beans/context/spring-context.xsd">
+
+  <!-- standalone list -->
+  <util:list list-class="java.util.LinkedList" id="linkedList">
+    <value>Person One</value>
+    <value>Person Two</value>
+    <value>Person New</value>
+    <value>Person Old</value>
+  </util:list>
+
+  <util:map map-class="java.util.HashMap" id="hashMap">
+    <entry key="Person One" value="1"></entry>
+    <entry key="Person Old" value="2"></entry>
+  </util:map>
+
+  <!-- standalone properties -->
+
+  <util:properties id="propertyOne">
+    <prop key="db">Mongo</prop>
+    <prop key="host">url://localhost</prop>
+  </util:properties>
+
+  <bean class="com.example.standalone.collections.Person" name="personOne">
+
+    <!-- <property name="friends">
+      <ref bean="linkedList" />
+    </property> -->
+
+    <property name="friends" ref="linkedList" />
+
+    <property name="friendsMap" ref="hashMap" />
+
+    <property name="properties" ref="propertyOne" />
+
+  </bean>
+
+</beans>

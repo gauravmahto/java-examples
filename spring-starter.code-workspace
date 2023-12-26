@@ -1,0 +1,16 @@
+{
+	"folders": [
+		{
+			"path": "sprint-container/springcore"
+		}
+	],
+	"settings": {
+		"workbench.colorCustomizations": {
+			"activityBar.background": "#193401",
+			"titleBar.activeBackground": "#234902",
+			"titleBar.activeForeground": "#F1FEE4"
+		},
+		"java.configuration.updateBuildConfiguration": "interactive",
+		"java.compile.nullAnalysis.mode": "automatic"
+	}
+}

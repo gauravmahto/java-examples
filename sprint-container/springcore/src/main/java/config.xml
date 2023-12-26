@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xmlns:context="http://www.springframework.org/schema/context"
+  xmlns:p="http://www.springframework.org/schema/p" xsi:schemaLocation="http://www.springframework.org/schema/beans
+  https://www.springframework.org/schema/beans/spring-beans.xsd
+  https://www.springframework.org/schema/beans/context
+  https://www.springframework.org/schema/beans/context/spring-context.xsd">
+
+  <bean class="com.example.springcore.Student" name="studentOne">
+
+    <property name="id" value="1"/>
+
+    <property name="name" value="First"/>
+
+    <property name="address" value="Lucknow"/>
+
+    <property name="students">
+
+      <list>
+        <ref bean="subStudentOne" />
+        <ref bean="subStudentTwo" />
+      </list>
+
+    </property>
+
+  </bean>
+
+  <bean class="com.example.springcore.Student" name="subStudentOne">
+
+    <property name="id" value="2"/>
+
+    <property name="name" value="FirstSub"/>
+
+    <property name="address" value="Lucknow1"/>
+
+  </bean>
+
+  <bean class="com.example.springcore.Student" name="subStudentTwo">
+
+    <property name="id" value="3"/>
+
+    <property name="name" value="SecondSub"/>
+
+    <property name="address" value="Lucknow2"/>
+
+  </bean>
+
+</beans>
